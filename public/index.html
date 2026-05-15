@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8" />
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  />
+
+  <title>
+    VIDHAYAK PREMIER LEAGUE 2K26
+  </title>
+
+  <!-- GOOGLE FONTS -->
+
+  <link
+    rel="preconnect"
+    href="https://fonts.googleapis.com"
+  >
+
+  <link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+  >
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700;800&family=Rajdhani:wght@500;700&family=Teko:wght@500;600;700&display=swap"
+    rel="stylesheet"
+  >
+
+  <!-- STYLE -->
+
+  <link
+    rel="stylesheet"
+    href="style.css"
+  >
+
+</head>
+
+<body>
+
+<!-- HOME -->
+
+<div id="home"></div>
+
+<!-- CUSTOM POPUP -->
+
+<div id="customPopup" class="custom-popup">
+
+  <div class="popup-box">
+
+    <div id="popupIcon" class="popup-icon">
+      ⚠
+    </div>
+
+    <h2 id="popupTitle">
+      Error
+    </h2>
+
+    <p id="popupMessage">
+      Something went wrong
+    </p>
+
+    <button id="popupBtn">
+      OK
+    </button>
+
+  </div>
+
+</div>
+
+<!-- NAVBAR -->
+
+<nav class="navbar">
+
+  <div class="logo">
+
+    🏏 JABBA PANTHERS
+
+  </div>
+
+  <div class="nav-links">
+
+    <a href="#home">
+      HOME
+    </a>
+
+    <a href="#playersContainer">
+      PLAYERS
+    </a>
+
+    <a href="#teamSection">
+      TEAM
+    </a>
+
+    <a href="#statsSection">
+      STATS
+    </a>
+
+    <a href="#gallerySection">
+      GALLERY
+    </a>
+
+  </div>
+
+</nav>
+
+<!-- ADMIN BUTTON -->
+
+<button
+  id="adminOpenBtn"
+  class="admin-floating-btn"
+>
+
+  ADMIN
+
+</button>
+
+<!-- LOADER -->
+
+<div class="loader" id="loader">
+
+  <div class="loader-content">
+
+    <h1>
+      VPL 2K26
+    </h1>
+
+    <p>
+      Loading Team Data...
+    </p>
+
+    <div class="loader-bar">
+
+      <div class="loader-fill"></div>
+
+    </div>
+
+  </div>
+
+</div>
+
+<!-- LIVE TICKER -->
+
+<div class="live-ticker">
+
+  <div class="ticker-text">
+
+    🔥 VIDHAYAK PREMIER LEAGUE 2K26 •
+    JABBA PANTHERS • FEARLESS •
+    DOMINANT • UNSTOPPABLE •
+    CHAMPIONS IN MAKING 🔥
+
+  </div>
+
+</div>
+
+<!-- HERO HEADER -->
+
+<header class="hero-header">
+
+  <video
+    autoplay
+    muted
+    loop
+    playsinline
+    class="hero-video"
+  >
+
+    <source
+      src="https://cdn.coverr.co/videos/coverr-cricket-player-hitting-the-ball-1563790782048?download=1080p"
+      type="video/mp4"
+    >
+
+  </video>
+
+  <div class="overlay"></div>
+
+  <div class="hero-content">
+
+    <h1>
+
+      VIDHAYAK PREMIER LEAGUE 2K26
+
+    </h1>
+
+    <h2>
+
+      JABBA PANTHERS
+
+    </h2>
+
+    <p class="tagline">
+
+      Fearless • Dominant •
+      Unstoppable
+
+    </p>
+
+    <button
+      class="hero-btn"
+      onclick="
+      document
+      .getElementById(
+      'playersContainer'
+      )
+      .scrollIntoView({
+      behavior:'smooth'
+      })"
+    >
+
+      ENTER THE ARENA
+
+    </button>
+
+  </div>
+
+</header>
+
+<!-- TEAM INTRO -->
+
+<section
+  class="team-intro"
+  id="teamSection"
+>
+
+  <div class="intro-content">
+
+    <h2>
+
+      THE RISE OF
+      JABBA PANTHERS
+
+    </h2>
+
+    <p>
+
+      A fearless squad built to dominate
+      the battlefield of cricket.
+
+    </p>
+
+    <button
+      class="intro-btn"
+      onclick="
+      document
+      .getElementById(
+      'playersContainer'
+      )
+      .scrollIntoView({
+      behavior:'smooth'
+      })"
+    >
+
+      EXPLORE TEAM
+
+    </button>
+
+  </div>
+
+</section>
+
+<!-- STATS -->
+
+<section
+  class="stats-section"
+  id="statsSection"
+>
+
+  <div class="stat-box">
+
+    <h3>14</h3>
+
+    <p>PLAYERS</p>
+
+  </div>
+
+  <div class="stat-box">
+
+    <h3>2026</h3>
+
+    <p>SEASON</p>
+
+  </div>
+
+  <div class="stat-box">
+
+    <h3>VPL</h3>
+
+    <p>TOURNAMENT</p>
+
+  </div>
+
+  <div class="stat-box">
+
+    <h3>#1</h3>
+
+    <p>TEAM SPIRIT</p>
+
+  </div>
+
+</section>
+
+<!-- SEARCH -->
+
+<section class="search-section">
+
+  <input
+    type="text"
+    id="searchInput"
+    placeholder="Search Players..."
+  >
+
+</section>
+
+<!-- PLAYERS -->
+
+<section
+  class="players-container"
+  id="playersContainer"
+>
+
+</section>
+
+<!-- =========================
+     GALLERY FOLDER
+========================= -->
+
+<section id="gallerySection">
+
+  <div
+  class="gallery-folder"
+  onclick="openGalleryPopup()">
+
+    <div class="folder-icon">
+      📁
+    </div>
+
+    <h2>
+      VPL Gallery
+    </h2>
+
+    <p>
+      Click To Open Photos
+    </p>
+
+  </div>
+
+</section>
+
+<!-- =========================
+     GALLERY POPUP
+========================= -->
+
+<div
+class="gallery-popup"
+id="galleryPopup">
+
+  <span
+  class="gallery-popup-close"
+  onclick="closeGalleryPopup()">
+    ×
+  </span>
+
+  <h1 class="gallery-title">
+    Vidhayak Premier League
+  </h1>
+
+  <div class="gallery-grid">
+
+    <img src="images/gallery1.jpg" onclick="openGallery(this.src)">
+    <img src="images/gallery2.jpg" onclick="openGallery(this.src)">
+    <img src="images/gallery3.jpg" onclick="openGallery(this.src)">
+    <img src="images/gallery4.jpg" onclick="openGallery(this.src)">
+    <img src="images/gallery5.jpg" onclick="openGallery(this.src)">
+    <img src="images/gallery6.jpg" onclick="openGallery(this.src)">
+    <img src="images/gallery7.jpg" onclick="openGallery(this.src)">
+    <img src="images/gallery8.jpg" onclick="openGallery(this.src)">
+    <img src="images/gallery9.jpg" onclick="openGallery(this.src)">
+    <img src="images/gallery10.jpg" onclick="openGallery(this.src)">
+    <img src="images/gallery11.jpg" onclick="openGallery(this.src)">
+    <img src="images/gallery12.jpg" onclick="openGallery(this.src)">
+    <img src="images/gallery13.jpg" onclick="openGallery(this.src)">
+    <img src="images/gallery14.jpg" onclick="openGallery(this.src)">
+    <img src="images/gallery15.jpg" onclick="openGallery(this.src)">
+    <img src="images/gallery16.jpg" onclick="openGallery(this.src)">
+
+  </div>
+
+</div>
+
+<!-- =========================
+     IMAGE ZOOM MODAL
+========================= -->
+
+<div
+class="gallery-modal"
+id="galleryModal">
+
+  <span
+  class="gallery-close"
+  onclick="closeGallery()">
+    ×
+  </span>
+
+  <img
+  id="galleryModalImg">
+
+</div>
+
+<!-- PLAYER MODAL -->
+
+<div class="modal" id="modal">
+
+  <div class="modal-content">
+
+    <span
+      class="close-btn"
+      id="closeBtn"
+    >
+
+      &times;
+
+    </span>
+
+    <img id="modalImage">
+
+    <h2 id="modalName"></h2>
+
+    <p id="modalRole"></p>
+
+    <p id="modalDOB"></p>
+
+    <p id="modalAge"></p>
+
+    <p id="modalPlace"></p>
+
+    <p id="modalPhone"></p>
+
+  </div>
+
+</div>
+
+<!-- ADMIN MODAL -->
+
+<div
+  class="admin-modal"
+  id="adminModal"
+  style="display:none;"
+>
+
+  <div class="admin-box">
+
+    <div class="lock-icon">
+
+      🔒
+
+    </div>
+
+    <h2>
+
+      ADMIN ACCESS
+
+    </h2>
+
+    <p>
+
+      Enter Admin Secret Key
+
+    </p>
+
+    <input
+      type="password"
+      id="adminPassword"
+      placeholder="Enter Password"
+    >
+
+    <button id="adminLoginBtn">
+
+      UNLOCK ACCESS
+
+    </button>
+
+    <button id="viewerBtn">
+
+      CLOSE
+
+    </button>
+
+  </div>
+
+</div>
+
+<!-- FOOTER -->
+
+<footer
+  class="footer"
+  id="footerSection"
+>
+
+  <h2>
+
+    JABBA PANTHERS
+
+  </h2>
+
+  <p>
+
+    VIDHAYAK PREMIER LEAGUE 2K26
+
+  </p>
+
+</footer>
+
+<!-- SCRIPT -->
+<script>
+
+  // Browser scroll restore disable
+  if ("scrollRestoration" in history) {
+    history.scrollRestoration = "manual";
+  }
+
+  // Always open from top
+  window.onbeforeunload = function () {
+    window.scrollTo(0, 0);
+  };
+
+  window.onload = function () {
+    window.scrollTo(0, 0);
+  };
+
+</script>
+<script src="script.js"></script>
+
+</body>
+
+</html>
