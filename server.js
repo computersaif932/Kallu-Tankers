@@ -5,6 +5,11 @@ const multer = require("multer");
 const cors = require("cors");
 
 const app = express();
+
+/* =========================
+   PORT
+========================= */
+
 const PORT = process.env.PORT || 3000;
 
 /* =========================
@@ -18,43 +23,100 @@ const ADMIN_KEY = "vpl2026admin";
 ========================= */
 
 app.use(cors());
+
 app.use(express.json());
 
-app.use(express.static("public"));
-app.use("/uploads", express.static("uploads"));
+app.use(express.urlencoded({ extended: true }));
 
-const DATA_FILE = "./playersData.json";
+app.use(express.static(path.join(__dirname, "public")));
+
+app.use(
+  "/uploads",
+  express.static(path.join(__dirname, "uploads"))
+);
+
+/* =========================
+   DATA FILE
+========================= */
+
+const DATA_FILE = path.join(
+  __dirname,
+  "playersData.json"
+);
+
+/* =========================
+   CREATE FILE IF NOT EXISTS
+========================= */
+
+if (!fs.existsSync(DATA_FILE)) {
+  fs.writeFileSync(DATA_FILE, "[]");
+}
+
+/* =========================
+   CREATE UPLOADS FOLDER
+========================= */
+
+const uploadsFolder = path.join(
+  __dirname,
+  "uploads"
+);
+
+if (!fs.existsSync(uploadsFolder)) {
+  fs.mkdirSync(uploadsFolder);
+}
 
 /* =========================
    MULTER STORAGE
 ========================= */
 
 const storage = multer.diskStorage({
+
   destination: (req, file, cb) => {
-    cb(null, "uploads/");
+
+    cb(null, uploadsFolder);
+
   },
 
   filename: (req, file, cb) => {
+
     cb(
       null,
       Date.now() +
       path.extname(file.originalname)
     );
+
   }
+
 });
 
 const upload = multer({ storage });
 
 /* =========================
-   READ & WRITE FUNCTIONS
+   READ PLAYERS
 ========================= */
 
 function readPlayers() {
 
-  return JSON.parse(
-    fs.readFileSync(DATA_FILE)
-  );
+  try {
+
+    const data = fs.readFileSync(
+      DATA_FILE,
+      "utf8"
+    );
+
+    return JSON.parse(data || "[]");
+
+  } catch (err) {
+
+    return [];
+
+  }
+
 }
+
+/* =========================
+   WRITE PLAYERS
+========================= */
 
 function writePlayers(data) {
 
@@ -62,10 +124,11 @@ function writePlayers(data) {
     DATA_FILE,
     JSON.stringify(data, null, 2)
   );
+
 }
 
 /* =========================
-   ADMIN VERIFY FUNCTION
+   VERIFY ADMIN
 ========================= */
 
 function verifyAdmin(
@@ -77,31 +140,45 @@ function verifyAdmin(
   const adminKey =
     req.headers["x-admin-key"];
 
-  if (
-    adminKey !== ADMIN_KEY
-  ) {
+  if (adminKey !== ADMIN_KEY) {
 
     return res.status(403).json({
+
       message:
       "Unauthorized Access"
+
     });
+
   }
 
   next();
+
 }
 
 /* =========================
-   GET PLAYERS (PUBLIC)
+   HOME ROUTE
+========================= */
+
+app.get("/", (req, res) => {
+
+  res.sendFile(
+    path.join(__dirname, "public", "index.html")
+  );
+
+});
+
+/* =========================
+   GET PLAYERS
 ========================= */
 
 app.get(
   "/players",
   (req, res) => {
 
-    const players =
-      readPlayers();
+    const players = readPlayers();
 
     res.json(players);
+
   }
 );
 
@@ -128,12 +205,13 @@ app.put(
     if (!player) {
 
       return res.status(404).json({
+
         message:
         "Player not found"
-      });
-    }
 
-    /* UPDATE DATA */
+      });
+
+    }
 
     player.name =
       req.body.name;
@@ -147,8 +225,6 @@ app.put(
     player.phone =
       req.body.phone;
 
-    /* SAVE FILE */
-
     writePlayers(players);
 
     res.json({
@@ -157,12 +233,14 @@ app.put(
       "Player updated successfully",
 
       player
+
     });
+
   }
 );
 
 /* =========================
-   UPLOAD PHOTO
+   UPLOAD PLAYER PHOTO
 ========================= */
 
 app.post(
@@ -185,9 +263,23 @@ app.post(
     if (!player) {
 
       return res.status(404).json({
+
         message:
         "Player not found"
+
       });
+
+    }
+
+    if (!req.file) {
+
+      return res.status(400).json({
+
+        message:
+        "No file uploaded"
+
+      });
+
     }
 
     player.image =
@@ -198,21 +290,39 @@ app.post(
     res.json({
 
       message:
-      "Photo uploaded",
+      "Photo uploaded successfully",
 
       image:
       player.image
+
     });
+
   }
 );
+
+/* =========================
+   404 ROUTE
+========================= */
+
+app.use((req, res) => {
+
+  res.status(404).json({
+
+    message:
+    "Route not found"
+
+  });
+
+});
 
 /* =========================
    SERVER START
 ========================= */
 
-app.listen(PORT, () => {
+app.listen(PORT, "0.0.0.0", () => {
 
   console.log(
-    `Server running on http://localhost:${PORT}`
+    `Server running on port ${PORT}`
   );
+
 });
