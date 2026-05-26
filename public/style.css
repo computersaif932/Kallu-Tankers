@@ -1216,4 +1216,104 @@ button{
 
     font-size:35px;
   }
+    .nav-links{
+
+    width:100%;
+
+    justify-content:center;
+
+    gap:12px;
+  }
+
+  .nav-links a{
+
+    font-size:0.85rem;
+  }
+
+  .hero-content{
+
+    padding:15px;
+  }
+
+  .hero-content h1{
+
+    font-size:1.8rem;
+
+    line-height:1.2;
+  }
+
+  .hero-content h2{
+
+    font-size:2.7rem;
+
+    line-height:1;
+  }
+
+  .tagline{
+
+    font-size:0.8rem;
+
+    letter-spacing:1px;
+  }
+
+  .player-card{
+
+    border-radius:18px;
+  }
+
+  .player-image{
+
+    height:280px;
+  }
+
+  .player-info h2{
+
+    font-size:1.5rem;
+  }
+
+  .modal-content{
+
+    width:95%;
+  }
+
+  .modal-content h2{
+
+    font-size:2rem;
+  }
+
+  .modal-content p{
+
+    font-size:0.9rem;
+  }
+
+  .gallery-grid{
+
+    grid-template-columns:1fr;
+  }
+
+  .gallery-grid img{
+
+    height:220px;
+  }
+
+  .stats-section{
+
+    grid-template-columns:1fr 1fr;
+  }
+
+  .stat-box h3{
+
+    font-size:2rem;
+  }
+
+  .admin-floating-btn{
+
+    bottom:15px;
+
+    right:15px;
+
+    padding:12px 18px;
+
+    font-size:0.8rem;
+  }
 }
