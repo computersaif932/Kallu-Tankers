@@ -403,6 +403,216 @@ function renderPlayers(players) {
       }
     );
 
+    const editBtn =
+  card.querySelector(".edit-btn");
+
+if (editBtn) {
+
+  editBtn.addEventListener(
+    "click",
+    async (e) => {
+
+      e.stopPropagation();
+
+     const newName =
+  prompt(
+    "Enter Player Name",
+    player.name
+  );
+
+if (!newName) return;
+
+const newRole =
+  prompt(
+    "Enter Role",
+    player.role
+  );
+
+if (!newRole) return;
+
+const newDob =
+  prompt(
+    "Enter DOB (DD-MM-YYYY)",
+    player.dob
+  );
+
+if (!newDob) return;
+
+const newPlace =
+  prompt(
+    "Enter Place",
+    player.placeOfBirth
+  );
+
+if (!newPlace) return;
+
+const newPhone =
+  prompt(
+    "Enter Phone Number",
+    player.phone
+  );
+
+if (!newPhone) return;
+
+      try {
+
+        const response =
+          await fetch(
+            `/players/${player.id}`,
+            {
+
+              method: "PUT",
+
+              headers: {
+
+                "Content-Type":
+                "application/json",
+
+                "x-admin-key":
+                ADMIN_KEY
+              },
+
+              body: JSON.stringify({
+
+  name: newName,
+
+  role: newRole,
+
+  dob: newDob,
+
+  placeOfBirth: newPlace,
+
+  phone: newPhone
+})
+            }
+          );
+
+        const data =
+          await response.json();
+
+        if (
+          response.ok
+        ) {
+
+          showPopup(
+            "Success",
+            "Player Updated",
+            "success"
+          );
+
+          fetchPlayers();
+
+        } else {
+
+          showPopup(
+            "Error",
+            data.message
+          );
+        }
+
+      } catch (error) {
+
+        console.log(error);
+
+        showPopup(
+          "Error",
+          "Update Failed"
+        );
+      }
+    }
+  );
+
+
+const uploadBtn =
+  card.querySelector(".upload-btn");
+
+if (uploadBtn) {
+
+  uploadBtn.addEventListener(
+    "click",
+    async (e) => {
+
+      e.stopPropagation();
+
+      const input =
+        document.createElement("input");
+
+      input.type = "file";
+
+      input.accept = "image/*";
+
+      input.click();
+
+      input.onchange = async () => {
+
+        const file =
+          input.files[0];
+
+        if (!file) return;
+
+        const formData =
+          new FormData();
+
+        formData.append(
+          "photo",
+          file
+        );
+
+        try {
+
+          const response =
+            await fetch(
+              `/upload/${player.id}`,
+              {
+
+                method: "POST",
+
+                headers: {
+                  "x-admin-key":
+                  ADMIN_KEY
+                },
+
+                body: formData
+              }
+            );
+
+          const data =
+            await response.json();
+
+          if (
+            response.ok
+          ) {
+
+            showPopup(
+              "Success",
+              "Photo Updated",
+              "success"
+            );
+
+            fetchPlayers();
+
+          } else {
+
+            showPopup(
+              "Error",
+              data.message
+            );
+          }
+
+        } catch (error) {
+
+          console.log(error);
+
+          showPopup(
+            "Error",
+            "Upload Failed"
+          );
+        }
+      };
+    }
+  );
+}}
+
     fragment.appendChild(card);
   });
 

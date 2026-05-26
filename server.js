@@ -16,7 +16,7 @@ const PORT = process.env.PORT || 3000;
    ADMIN SECRET KEY
 ========================= */
 
-const ADMIN_KEY = "vpl2026admin";
+const ADMIN_KEY = "00725426";
 
 /* =========================
    MIDDLEWARE
@@ -224,6 +224,9 @@ app.put(
 
     player.phone =
       req.body.phone;
+
+      player.placeOfBirth =
+  req.body.placeOfBirth;
 
     writePlayers(players);
 

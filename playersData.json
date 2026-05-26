@@ -1,23 +1,23 @@
 [
   {
     "id": 1,
-    "name": "Zafir Khan",
-    "role": "Captain & Batsman",
-    "dob": "12-09-2004",
+    "name": "Alfaij Khan",
+    "role": "Batsman",
+    "dob": "05-01-2010",
     "placeOfBirth": "Morar Idgah Gwalior",
     "captain": false,
-    "image": "/uploads/1778849779565.png",
-    "phone": "7354156127"
+    "image": "/uploads/1779783528099.jpg",
+    "phone": "9713390635"
   },
   {
     "id": 2,
-    "name": "Javed Khan",
-    "role": "Batsman",
-    "dob": "10-10-1990",
+    "name": "Juned Khan",
+    "role": "All-Rounder",
+    "dob": "10-02-2009",
     "placeOfBirth": "Morar Idgah Gwalior",
     "captain": true,
-    "image": "/uploads/1778849794666.jpeg",
-    "phone": "8395977315"
+    "image": "/uploads/1779783451257.png",
+    "phone": "9285211903"
   },
   {
     "id": 3,
