@@ -21,73 +21,73 @@
   },
   {
     "id": 3,
-    "name": "Saif Khan",
+    "name": "Afjal Mohammad",
     "role": "Batsman",
-    "dob": "04-08-2005",
+    "dob": "02-01-2003",
     "placeOfBirth": "Morar Idgah Gwalior",
     "captain": false,
-    "image": "/uploads/1778761273397.jpg",
-    "phone": "7509246459"
+    "image": "/uploads/1779794911617.png",
+    "phone": "8962714772"
   },
   {
     "id": 4,
-    "name": "Fajal Mohammad",
+    "name": "Alfez Khan",
     "role": "Batsman",
-    "dob": "02-03-2007",
+    "dob": "19-10-2008",
     "placeOfBirth": "Morar Idgah Gwalior",
     "captain": false,
-    "image": "/uploads/1778849820839.jpeg",
-    "phone": "7415314437"
+    "image": "/uploads/1779794995457.jpg",
+    "phone": "9171106053"
   },
   {
     "id": 5,
-    "name": "Arman Khan",
-    "role": "Batsman",
-    "dob": "10-12-2007",
+    "name": "Shaharukh Khan",
+    "role": "Bowler",
+    "dob": "25-07-2005",
     "placeOfBirth": "Morar Idgah Gwalior",
     "captain": false,
-    "image": "/uploads/1778849837013.jpeg",
-    "phone": "6264749004"
+    "image": "/uploads/1779796018446.jpeg",
+    "phone": "6261882550"
   },
   {
     "id": 6,
-    "name": "Faijaan Khan",
-    "role": "Batsman",
+    "name": "Altaf Khan",
+    "role": "Captain & Batsman",
     "dob": "24-07-2002",
     "placeOfBirth": "Morar Idgah Gwalior",
     "captain": false,
-    "image": "/uploads/1778849852838.jpeg",
-    "phone": "7415934572"
+    "image": "/uploads/1779796090371.jpeg",
+    "phone": "7869500389"
   },
   {
     "id": 7,
-    "name": "Nadim Khan",
+    "name": "Salman Khan",
     "role": "Batsman",
     "dob": "10-12-1995",
     "placeOfBirth": "Morar Idgah Gwalior",
     "captain": false,
-    "image": "/uploads/1778849859535.jpeg",
-    "phone": "9098966518"
+    "image": "/uploads/1779796167090.jpeg",
+    "phone": "6261455427"
   },
   {
     "id": 8,
-    "name": "Qalandar Khan",
+    "name": "Mohammad Aavid",
     "role": "Batsman",
-    "dob": "01-01-2000",
+    "dob": "01-01-1990",
     "placeOfBirth": "Morar Idgah Gwalior",
     "captain": false,
-    "image": "/uploads/1778850486685.jpeg",
-    "phone": "9575261380"
+    "image": "/uploads/1779796221334.jpeg",
+    "phone": "8358823202"
   },
   {
     "id": 9,
-    "name": "Imran Khan",
+    "name": "Nazim Khan",
     "role": "Bowler",
-    "dob": "01-01-1991",
+    "dob": "08-10-2002",
     "placeOfBirth": "Morar Idgah Gwalior",
     "captain": false,
-    "image": "/uploads/1778850500813.jpeg",
-    "phone": "9826558447"
+    "image": "/uploads/1779797331298.jpeg",
+    "phone": "6267118410"
   },
   {
     "id": 10,
